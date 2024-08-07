@@ -1,0 +1,19 @@
+.card {
+  border: solid 1px rgb(187, 171, 171);
+  padding: 10px 10px;
+  margin-bottom: 25px;
+  width: 80%;
+}
+
+button {
+  padding: 5px 5px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(57, 161, 126);
+  color: white;
+  margin-left: 15px;
+
+  &&.excluir {
+    background-color: rgb(172, 76, 31);
+  }
+}

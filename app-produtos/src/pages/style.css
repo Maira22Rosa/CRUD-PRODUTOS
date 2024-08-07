@@ -1,0 +1,28 @@
+label {
+  margin-right: 10px;
+}
+.container {
+  padding-left: 20px;
+  align-items: center;
+  text-align: center;
+  display: grid;
+  justify-content: space-around;
+}
+.campo {
+  height: 30px;
+  width: 40em;
+  border-radius: 10px;
+  border: 1px solid rgb(58, 179, 58);
+}
+
+.enviar {
+  padding: 5px 5px;
+  border-radius: 8px;
+  border: none;
+  height: 48px;
+  width: 38em;
+  font-size: 16px;
+  background-color: rgb(57, 161, 126);
+  color: white;
+  margin-left: 15px;
+}

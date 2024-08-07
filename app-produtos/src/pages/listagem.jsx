@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import CardProdutos from "../components/card-produtos";
 function Listagem() {
   const navigate = useNavigate();
   const API = "https://fakestoreapi.com/products";
@@ -14,10 +15,6 @@ function Listagem() {
     } catch (error) {
       throw error;
     }
-  };
-
-  const getById = (id) => {
-    navigate(`/cadastro/${id}`);
   };
 
   useEffect(() => {
@@ -34,18 +31,21 @@ function Listagem() {
   }, []);
   return (
     <>
-      <div>
-        <h1>LISTAGEM</h1>
-        <button onClick={() => navigate("/cadastro")}>NOVO</button>
-        {listagem.map((element) => (
-          <div key={element.id}>
-            <p>Titulo: {element.title}</p>
-            <p>Categoria: {element.description}</p>
-            <p>Valor: {element.price}</p>
-            <img width={50} height={50} src={element.image} />
-            <button onClick={() => getById(element.id)}>Ver detalhes</button>
-          </div>
-        ))}
+      <div style={{ paddingLeft: 20 }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <h1>LISTAGEM</h1>
+          <button
+            style={{ width: 100, height: 30 }}
+            onClick={() => navigate("/cadastro")}
+          >
+            NOVO
+          </button>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
+          {listagem.map((element) => (
+            <CardProdutos props={element} />
+          ))}
+        </div>
       </div>
     </>
   );
