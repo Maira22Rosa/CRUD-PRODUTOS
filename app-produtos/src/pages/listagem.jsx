@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function Listagem(){
-   const API='https://fakestoreapi.com/products';
+    // const navigate = useNavigate();
+    const API='https://fakestoreapi.com/products';
 
     const [listagem, setListagem]=useState([]);
 
@@ -29,30 +31,30 @@ function Listagem(){
     }
 
    
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const data = await getAll();
-                setListagem(data);
-            } catch (error) {
-                console.error(error.message);
-            } 
-        };
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const data = await getAll();
+    //             setListagem(data);
+    //         } catch (error) {
+    //             console.error(error.message);
+    //         } 
+    //     };
 
-        fetchData();
-    }, []);
+    //     fetchData();
+    // }, []);
    return( <>
         <div>
             <h1>LISTAGEM</h1>
             <button onClick={post}>NOVO</button>
-            {listagem.map((element) => (
+            {/* { listagem.map((element) => (
                 <div key={element.id}>
                     <p>Titulo: {element.title}</p> 
                     <p>Categoria: {element.description}</p>  
                     <p>Valor: {element.price}</p>  
                     <img width={50} height={50} src={element.image}/>
                 </div>
-            ))}
+            ))} */}
         </div>
     </>)
 }
